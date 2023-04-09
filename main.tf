@@ -52,14 +52,14 @@ resource "yandex_vpc_subnet" "subnet_terraform_2" {
 }
 
 module "vm_1" {
-  source		= "./modules/instance"
+  source		= "git@github.com:Einheryar/YaC-TerraformModule_Instance.git?ref=v.1.1"
   instance_image_family	= "lemp"
   vpc_subnet_id		= yandex_vpc_subnet.subnet_terraform_1.id
   instance_zone		= "ru-central1-a"
 }
 
 module "vm_2" {
-  source		= "./modules/instance"
+  source		= "git@github.com:Einheryar/YaC-TerraformModule_Instance.git?ref=v.1.1"
   instance_image_family	= "lamp"
   vpc_subnet_id		= yandex_vpc_subnet.subnet_terraform_2.id
   instance_zone		= "ru-central1-b"
